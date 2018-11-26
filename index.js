@@ -16,6 +16,10 @@ module.exports = {
     this.format(`warning`, message, meta).write()
   },
 
+  alert(message, meta) {
+    this.format(`alert`, message, meta).write()
+  },
+
   format(level, msg, meta) {
     if(typeof msg !== 'string') msg = JSON.stringify(msg)
 
