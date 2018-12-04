@@ -1,23 +1,23 @@
 module.exports = {
 
-  debug(message, meta) {
-    this.format(`debug`, message, meta).write()
+  debug(message, attributes) {
+    this.format(`debug`, message, attributes).write()
   },
 
-  info(message, meta) {
-    this.format(`info`, message, meta).write()
+  info(message, attributes) {
+    this.format(`info`, message, attributes).write()
   },
 
-  warn(message, meta) {
-    this.format(`warning`, message, meta).write()
+  warn(message, attributes) {
+    this.format(`warning`, message, attributes).write()
   },
 
-  error(message, meta) {
-    this.format(`error`, message, meta).write()
+  error(message, attributes) {
+    this.format(`error`, message, attributes).write()
   },
 
-  alert(message, meta) {
-    this.format(`alert`, message, meta).write()
+  alert(message, attributes) {
+    this.format(`alert`, message, attributes).write()
   },
 
   format(level, message, attributes) {
