@@ -7,18 +7,36 @@ But rather to just `console.log` in a standard JSON format
 const log = require('rsc-clean-log-json')
 
 log.info(`Event saved`) 
-// { "level": "info", "msg": "Event saved" }
+// { "level": "info", "message": "Event saved" }
 
 log.error(`Error saving`, new Error(`database-offline`)) 
-// { "level": "error", "msg": "Event saving", "errorMsg": "database-offline" }
+/*
+{
+  "level": "error", 
+  "message": "Event saving", 
+  "attributes": {
+    "error": "database-offline",
+    "stack" "<stack trace>"
+  }
+}
+*/
 
 log.warn(`Not too serious`, { userId: 1, name: 'John Doe'} )
-// { "level": "error", "msg": "Not too serious", "userId": 1, "name": "John Doe" }
+/*
+{
+  "level": "warn", 
+  "message": "Not too serious", 
+  "attributes": {
+    "userId": 1, 
+    "name": "John Doe" 
+  }
+}
+*/
 ```
 
 ## Methods
 - `log.debug()`
 - `log.info()`
-- `log.wanr()`
+- `log.warn()`
 - `log.error()`
 - `log.alert()`
