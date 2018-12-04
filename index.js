@@ -13,29 +13,53 @@ module.exports = {
   },
 
   error(message, meta) {
-    this.format(`warning`, message, meta).write()
+    this.format(`error`, message, meta).write()
   },
 
   alert(message, meta) {
     this.format(`alert`, message, meta).write()
   },
 
-  format(level, msg, meta) {
-    if(typeof msg !== 'string') msg = JSON.stringify(msg)
+  format(level, message, attributes) {
 
-    if(meta instanceof Error) meta = { errorMsg: meta.message }
-    else if (typeof meta === 'string') meta = { meta }
+    try {
 
-    this.logLine = JSON.stringify({
-      level,
-      msg,
-      ...meta
-    })
+      if (attributes instanceof Error) {
+        attributes = {
+          error: attributes.message,
+          stack: attributes.stack
+        }
+      }
+      // remove empty object
+      else if (attributes && !Object.keys(attributes).length) {
+        attributes = undefined
+      }
+      // force attributes to be object
+      else if (typeof attributes === 'string') {
+        attributes = { string: attributes }
+      }
+
+      this.logLine = JSON.stringify({
+        level: String(level),
+        message: String(message),
+        attributes
+      })
+
+    } catch (err) {
+
+      // catch circular reference and other exception
+      attributes = { logError: err.message }
+      this.logLine = JSON.stringify({
+        level,
+        message,
+        attributes
+      })
+    }
 
     return this
   },
 
   write() {
-    console.log(this.logLine)
+    console.log('%s', this.logLine)
   }
 }
