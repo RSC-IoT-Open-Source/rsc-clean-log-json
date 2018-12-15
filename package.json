@@ -8,12 +8,15 @@
     "coverage": "NODE_ENV=test nyc --all --reporter=html mocha --recursive test --timeout 5000 && open ./coverage/index.html"
   },
   "author": "Radio Systems Corporation",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RSC-IoT-Open-Source/rsc-clean-log-json"
+  },
   "license": "MIT",
   "devDependencies": {
     "mocha": "^5.2.0",
     "nyc": "^13.1.0",
     "sinon": "^7.1.1",
     "standard": "^12.0.1"
-  },
-  "dependencies": {}
+  }
 }
