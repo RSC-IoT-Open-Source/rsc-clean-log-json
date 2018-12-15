@@ -1,7 +1,7 @@
 {
-  "name": "rsc-nodejs-logger",
+  "name": "rsc-clean-log-json",
   "version": "0.1.0",
-  "description": "RSC Node Logger",
+  "description": "RSC NodeJS JSON Logger",
   "main": "index.js",
   "scripts": {
     "test": "NODE_ENV=test mocha --recursive test",
