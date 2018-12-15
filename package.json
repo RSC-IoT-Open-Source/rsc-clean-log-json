@@ -1,10 +1,11 @@
 {
   "name": "rsc-nodejs-logger",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "RSC Node Logger",
   "main": "index.js",
   "scripts": {
-    "test": "NODE_ENV=test mocha --recursive test"
+    "test": "NODE_ENV=test mocha --recursive test",
+    "coverage": "NODE_ENV=test nyc --all --reporter=html mocha --recursive test --timeout 5000 && open ./coverage/index.html"
   },
   "author": "Radio Systems Corporation",
   "license": "MIT",
