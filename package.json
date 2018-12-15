@@ -1,6 +1,6 @@
 {
   "name": "rsc-clean-log-json",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "RSC NodeJS JSON Logger",
   "main": "index.js",
   "scripts": {
