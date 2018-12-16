@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "NODE_ENV=test mocha --recursive test",
-    "coverage": "NODE_ENV=test nyc --all --reporter=html mocha --recursive test --timeout 5000 && open ./coverage/index.html"
+    "coverage": "NODE_ENV=test nyc --all --reporter=html mocha --recursive test --timeout 5000 && open ./coverage/index.html",
+    "coveralls": "nyc --all --reporter=text-lcov mocha --recursive test | coveralls"
   },
   "author": "Radio Systems Corporation",
   "repository": {
@@ -14,6 +15,7 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "coveralls": "^3.0.2",
     "mocha": "^5.2.0",
     "nyc": "^13.1.0",
     "sinon": "^7.1.1",
