@@ -1,6 +1,5 @@
 const assert = require('assert')
 const { describe, it } = require('mocha')
-const sinon = require('sinon')
 
 const logger = require('../index')
 
@@ -56,8 +55,8 @@ describe('rsc-clean-log-json', function () {
     })
 
     it('should set logError for an exception', function () {
-      let circular = [];
-      circular[0] = circular;
+      let circular = []
+      circular[0] = circular
 
       let output = JSON.stringify({
         level: 'test',
@@ -72,32 +71,31 @@ describe('rsc-clean-log-json', function () {
   })
 
   describe('write', function () {
-    it('should write to console.log', function() {
+    it('should write to console.log', function () {
       logger.format(`test`, `my-message`, {})
       logger.write()
     })
   })
 
   describe('log levels', function () {
-    it('should write debug message', function() {
+    it('should write debug message', function () {
       logger.debug(`my debug message`)
     })
 
-    it('should write info message', function() {
+    it('should write info message', function () {
       logger.info(`my info message`)
     })
 
-    it('should write warn message', function() {
+    it('should write warn message', function () {
       logger.warn(`my warn message`)
     })
 
-    it('should write error message', function() {
+    it('should write error message', function () {
       logger.error(`my error message`)
     })
 
-    it('should write alert message', function() {
+    it('should write alert message', function () {
       logger.alert(`my alert message`)
     })
   })
-
 })

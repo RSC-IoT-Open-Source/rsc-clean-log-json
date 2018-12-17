@@ -1,6 +1,15 @@
 # RSC NodeJS JSON Logging Library
-Simple logging library to reduce initialization and options.
-But rather to just `console.log` in a standard JSON format
+
+[![Build Status](https://travis-ci.org/jveldboom/rsc-clean-log-json.svg?branch=master)](https://travis-ci.org/jveldboom/rsc-clean-log-json)
+[![Coverage Status](https://coveralls.io/repos/github/jveldboom/rsc-clean-log-json/badge.svg)](https://coveralls.io/github/jveldboom/rsc-clean-log-json)
+
+Simple logging library to reduce initialization and config options.
+Basically just a wrapper around `console.log` in a standard JSON output format.
+
+## Installation
+```
+npm i rsc-clean-log-json
+```
 
 ## Usage
 ```js
